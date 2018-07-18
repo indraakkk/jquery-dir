@@ -14,21 +14,38 @@
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container col-8">
+            <h1 class="display-4 text-center text-light bg-trans">Traveller To do list</h1>
+        </div>
+    </div>
 
-    <h1 id="head1" class="head1 text-center">Hello World using jQuery</h1>
+    <!-- display clock -->
+    <div class="container text-center">
+        <h2 id="clock"></h2>
+        <p id="date"></p>
+    </div>
 
-    <form id="login-form">
-        <label>Username:
-            <input type="text">
-        </label>
-        <label>Password:
-            <input type="text">
-        </label>
-        <input type="button" value="Log In">
-    </form>
 
-    <div class="text-center mt-3">
-        <button id="button-move">Move Image from top to bottom</button>
+    <!-- input to do form -->
+    <div id="main-form" class="container text-center col-xs-10 col-md-8">
+        <form id="input-form" class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg" placeholder="Where we going" aria-label="Where we going" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button id="button-add" class="btn btn-outline-secondary" type="button">Let's Go</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- display to do list -->
+    <div class="container">
+     <div id="add" class="list-item"></div>
+    </div>
+
+
+    <!-- to do app stack -->
+    <div class="text-center footer-stack">
+        <button id="button-move" class="btn btn-primary">Move Image from top to bottom</button>
     </div>
 
     <div class="container mt-4">
@@ -48,8 +65,8 @@
     <!-- Optional JavaScript -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

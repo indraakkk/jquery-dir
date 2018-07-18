@@ -1,3 +1,36 @@
+.jumbotron-fluid {
+    background: url("./images/cover.jpeg");
+    position: relative;
+    min-height: 300px;
+}
+
+.container>h1 {
+    margin-top: 10%;
+    background-color: gray;
+}
+
+#clock {
+    font-weight: normal;
+    font-size: 60px;
+    color: rgb(0, 115, 182);
+    margin-bottom: 0;
+}
+
+#date {
+    color: rgb(0, 115, 182);
+    font-size: 1.1rem;
+    padding-bottom: 9px;
+    border-bottom: 1px solid;
+}
+
+.footer-stack {
+    margin-top: 20rem;
+}
+
+.list-item {
+    font-size: 1.6em;
+}
+
 button {
     text-align: center;
 }

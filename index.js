@@ -1,17 +1,73 @@
-// selector by tag, class name and id
+// ============================================================
+// global variable
+const todoInputForm = document.getElementById("input-form");
+
+
+// ============================================================
+// display time
+const displayClock = () => {
+    const timeDate = new Date();
+    const clock = document.querySelector("#clock");
+    const date = document.querySelector("#date");
+
+    let hours = timeDate.getHours() % 12;
+    let minutes = timeDate.getMinutes();
+    let dayOrNight = '';
+
+    if (hours.toString().length < 2) {
+        hours = '0' + hours;
+    }
+    if (minutes.toString().length < 2) {
+        minutes = '0' + minutes;
+    }
+    if (timeDate.getHours() <= 12) {
+        dayOrNight = 'AM';
+    } else {
+        dayOrNight = 'PM';
+    }
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const today = days[timeDate.getDay()];
+
+    const clockOutput = hours + ' : ' + minutes + ' ' + dayOrNight;
+    const dateOutput = today;
+
+    clock.textContent = clockOutput;
+    date.textContent = dateOutput;
+}
+
+window.onload = clockFunction = () => {
+    displayClock();
+    setInterval(displayClock, 1000)
+}
+
+
+// ============================================================
+// add todo
+const create = (event) => {
+    event.preventDefault()
+}
+
 $(document).ready(function () {
-    $(".head1").css("background", "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,5,117,1) 33%, rgba(0,212,255,1) 100%)");
-    $("h1").css("color", "white")
-    $("#head1").css("min-height", "10rem");
+    $("#button-add").click(function () {
+        let text = $("input").val()
+        if ($("input").val().length === 0) {
+            alert("fill the form first")
+        } else($("#add").append("<li>" + text + "</li>"))
+        $('input').val("")
+    });
 });
 
-// selector by attribute
-$(document).ready(function () {
-    $('#login-form').css("text-align", "center")
-    $('input[type="text"]').css("background", "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,5,117,1) 33%, rgba(0,212,255,1) 100%)");
-    $('input[type="text"]').css("color", "white");
+$(document).on("click", "li", function () {
+    $("this").hide();
 });
 
+// ================================================================
+// event listener
+
+todoInputForm.addEventListener("submit", create);
+
+// ================================================================
 // resize images
 $(document).ready(function () {
     $("img").css("max-height", "10rem");
@@ -27,13 +83,13 @@ $(document).ready(function () {
 });
 
 // hide images
-$("#img1").click(function(){
+$("#img1").click(function () {
     $(this).hide()
 });
 
-$("#img2").click(function(){
+$("#img2").click(function () {
     $(this).hide();
 });
-$("#img3").click(function(){
+$("#img3").click(function () {
     $(this).hide();
 });
