@@ -41,6 +41,11 @@ window.onload = clockFunction = () => {
     setInterval(displayClock, 1000)
 }
 
+// ===========================================================
+// template list
+
+
+
 
 // ============================================================
 // add todo
@@ -53,13 +58,13 @@ $(document).ready(function () {
         let text = $("input").val()
         if ($("input").val().length === 0) {
             alert("fill the form first")
-        } else($("#add").append("<li>" + text + "</li>"))
+        } else($("#add").append("<li>" + text + "<img class='img' src='./images/close-blue.png' width='20px'><hr></li>"))
         $('input').val("")
     });
 });
 
 $(document).on("click", "li", function () {
-    $("this").hide();
+    $(this).fadeOut('slow')
 });
 
 // ================================================================

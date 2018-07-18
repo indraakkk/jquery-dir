@@ -31,6 +31,10 @@
     font-size: 1.6em;
 }
 
+.img{
+    float: right;
+}
+
 button {
     text-align: center;
 }
